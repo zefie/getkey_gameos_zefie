@@ -187,6 +187,9 @@ if(sys_storage_open(BD_DEVICE, &g_fd) != 0) {
     fclose(g_file_log);
     return 1;
   }
+
+  fprintf(g_file_binlog, "Encrypted 3K RIP");
+
   if (fwrite(d1, 1, 16, g_file_binlog) != 16) {
     fprintf(g_file_log, "Failed writing binary key 1 to disk.key\r\n");
   }
